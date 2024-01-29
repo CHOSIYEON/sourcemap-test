@@ -9,7 +9,7 @@ function App() {
   const [count] = useState(0);
 
   const sendError = () => {
-    Sentry.captureMessage("에러가 발생했습니다!");
+    Sentry.captureException(new Error());
   };
 
   return (
