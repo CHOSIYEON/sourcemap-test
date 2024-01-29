@@ -9,9 +9,9 @@ export default defineConfig({
     sentryVitePlugin({
       org: "fe-error-logging",
       project: "javascript-react2",
-      // sourcemaps: {
-      //   filesToDeleteAfterUpload: "./dist/**/*.map",
-      // },
+      sourcemaps: {
+        filesToDeleteAfterUpload: "./dist/**/*.map",
+      },
     }),
   ],
 
