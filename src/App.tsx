@@ -3,8 +3,14 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
+import * as Sentry from "@sentry/react";
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [count] = useState(0);
+
+  const sendError = () => {
+    Sentry.captureMessage("에러가 발생했습니다!");
+  };
 
   return (
     <>
@@ -18,7 +24,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => methodDoesNotExist()}>count is {count}</button>
+        <button onClick={() => sendError()}>count is {count}</button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
